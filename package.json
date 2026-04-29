@@ -1,0 +1,67 @@
+{
+  "name": "rux",
+  "displayName": "Rux Language",
+  "description": "Syntax highlighting for the Rux programming language",
+  "version": "0.1.0",
+  "publisher": "rux-lang",
+  "author": "Ivan Muzyka <musicvano@gmail.com>",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e2e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rux-lang/VSCode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rux-lang/VSCode/issues"
+  },
+  "homepage": "https://github.com/rux-lang/VSCode#readme",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "rux",
+    "rux-lang",
+    "syntax highlighting",
+    "language",
+    "grammar"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "rux",
+        "aliases": [
+          "Rux",
+          "rux"
+        ],
+        "extensions": [
+          ".rux"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "rux",
+        "scopeName": "source.rux",
+        "path": "./syntaxes/rux.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.rux.codeblock",
+        "path": "./syntaxes/rux.markdown.tmLanguage.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.rux": "rux"
+        }
+      }
+    ]
+  }
+}
