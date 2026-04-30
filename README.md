@@ -1,6 +1,6 @@
 # Rux Language — VS Code Extension
 
-Syntax highlighting support for the [Rux programming language](https://github.com/rux-lang/Rux) in Visual Studio Code.
+Syntax highlighting support for the [Rux](https://rux-lang.dev) programming language in [Visual Studio Code](https://code.visualstudio.com).
 
 ![Rux syntax highlighting preview](https://raw.githubusercontent.com/rux-lang/VSCode/main/images/preview.png)
 
