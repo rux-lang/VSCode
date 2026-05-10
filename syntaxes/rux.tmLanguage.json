@@ -197,6 +197,18 @@
           "comment": "Language constants",
           "name": "constant.language.bool.rux",
           "match": "\\b(true|false|null)\\b"
+        },
+        {
+          "comment": "Compile-time intrinsic constants",
+          "match": "(#)(package|module|file|function|line|column|date|time)\\b",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.constant.rux"
+            },
+            "2": {
+              "name": "constant.language.compiletime.rux"
+            }
+          }
         }
       ]
     },
@@ -273,6 +285,46 @@
               ]
             },
             {
+              "comment": "Return tuple type",
+              "name": "meta.return.type.tuple.rux",
+              "begin": "\\s*(->)\\s*(\\()",
+              "beginCaptures": {
+                "1": {
+                  "name": "punctuation.separator.arrow.rux"
+                },
+                "2": {
+                  "name": "punctuation.section.tuple.begin.rux"
+                }
+              },
+              "end": "\\)",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.tuple.end.rux"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "\\*+",
+                  "name": "keyword.operator.pointer.rux"
+                },
+                {
+                  "match": "\\bconst\\b",
+                  "name": "storage.modifier.rux"
+                },
+                {
+                  "include": "#types"
+                },
+                {
+                  "match": "\\b[A-Za-z_][A-Za-z0-9_<>]*\\b",
+                  "name": "storage.type.return.rux"
+                },
+                {
+                  "match": ",",
+                  "name": "punctuation.separator.parameter.rux"
+                }
+              ]
+            },
+            {
               "comment": "Return type",
               "match": "\\s*(->)\\s*(\\**)(\\s*const)?\\s*([A-Za-z_][A-Za-z0-9_<>]*)",
               "captures": {
@@ -338,7 +390,7 @@
         {
           "comment": "Control flow keywords",
           "name": "keyword.control.rux",
-          "match": "\\b(break|continue|do|else|for|if|in|match|return|while)\\b"
+          "match": "\\b(break|continue|do|else|for|if|in|loop|match|return|while)\\b"
         },
         {
           "comment": "Storage modifier",
@@ -349,6 +401,11 @@
           "comment": "Class keyword",
           "name": "keyword.declaration.class.rux storage.type.rux",
           "match": "\\b(class)\\b"
+        },
+        {
+          "comment": "Interface keyword",
+          "name": "keyword.declaration.interface.rux storage.type.rux",
+          "match": "\\b(interface)\\b"
         },
         {
           "comment": "Enum keyword",
@@ -378,7 +435,7 @@
         {
           "comment": "Other keywords",
           "name": "keyword.other.rux",
-          "match": "\\b(as|async|extern|import|export)\\b"
+          "match": "\\b(as|async|extend|extern|import|export|module)\\b"
         }
       ]
     },

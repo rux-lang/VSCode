@@ -2,7 +2,7 @@
   "name": "vscode-rux",
   "displayName": "Rux Language",
   "description": "Syntax highlighting for the Rux programming language",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "publisher": "rux-lang",
   "author": "Ivan Muzyka <musicvano@gmail.com>",
   "icon": "images/icon.png",
