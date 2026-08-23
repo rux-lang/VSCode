@@ -68,4 +68,4 @@ Initial release with full syntax highlighting for Rux source files and Markdown 
 
 ## License
 
-[MIT](LICENSE)
+Licensed under the [MIT License](LICENSE.md).
